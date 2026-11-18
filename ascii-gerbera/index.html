@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerberas for Aistė :)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+  #music-status {
+    display: none !important;
+  }
+</style>
+
+<body>
+  <main class="layout">
+    <aside class="dedication">
+      <h1>Gerberas for Aistė :)</h1>
+    </aside>
+
+    <section class="stage" aria-label="Interactive ASCII bouquet">
+      <canvas
+        id="flower"
+        role="img"
+        aria-label="Rotating, blooming ASCII gerbera bouquet"
+      ></canvas>
+
+      <span id="animation-status" class="badge">Blooming</span>
+    </section>
+
+    <aside class="music-panel" aria-label="Music player">
+      <h2 id="track-title"></h2>
+      <p id="track-artist" class="muted"></p>
+
+      <div class="music-buttons">
+        <button id="previous" type="button" aria-label="Previous song">
+          ⏮
+        </button>
+
+        <button id="play" type="button" aria-label="Play music">
+          ▶
+        </button>
+
+        <button id="next" type="button" aria-label="Next song">
+          ⏭
+        </button>
+      </div>
+
+      <label class="seek-label" for="seek">Song progress</label>
+
+      <input
+        id="seek"
+        type="range"
+        min="0"
+        max="100"
+        step="0.1"
+        value="0"
+        disabled
+      >
+
+      <div class="time">
+        <span id="current-time">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+
+      <label class="react-toggle">
+        <input id="react" type="checkbox" checked>
+        Let the petals feel the bass
+      </label>
+
+      <p id="music-status" class="muted" role="status">
+        Press play to start.
+      </p>
+    </aside>
+  </main>
+
+  <audio id="audio" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
